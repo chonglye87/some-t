@@ -5680,6 +5680,27 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   left: 0%;
   top: 0%;
 }
+.container-most {
+  margin-left: 0;
+  margin-right: 250px;
+  padding: 6px;
+}
+.action-card {
+  width: 50%;
+  padding: 6px;
+}
+.action-card > img {
+  width: 100%;
+}
+.action-content {
+  width: 100%;
+  position: relative;
+  display: block;
+}
+#action-01 {
+  background-image: url(http://www.moooi.com/sites/default/files/styles/large/public/randomlight300c_0.jpg);
+  background-size: cover;
+}
 .pallete-item {
   width: 140px;
   float: left;
