@@ -2,6 +2,7 @@
 //
 .button-variant(@color; @background; @hover-background; @active-background; @disabled-background: @gray-light) {
   color: @color;
+  border: 2px solid @color;
   background-color: @background;
 
   &:hover,
@@ -12,7 +13,7 @@
   .open > .dropdown-toggle& {
     color: @color;
     background-color: @hover-background;
-    border-color: @hover-background;
+    border-color: fade(@color, 50%);
   }
   &:active,
   &.active,

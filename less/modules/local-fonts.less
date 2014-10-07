@@ -1,9 +1,44 @@
+// General
+html, body {
+  height: 100%;
+}
+
+.blacktitle() {
+  color: fade(@brand-primary, 80%);
+
+}
+
+.clearfix() {
+  &:before,
+    &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//
+
+.fixed {
+  top: 0;
+  position: absolute;
+}
+
 .sidebar {
+  top: 0;
   position: fixed;
   height: 100%;
   width: 250px;
   background-color: @accented;
   z-index: 5;
+}
+@media only screen 
+and (max-width : 800px) {
+  .sidebar {
+    display: none;
+  }
 }
 
 .sidebar-left {
@@ -26,6 +61,10 @@
 
 }
 
+.sidebar-hidden {
+  display: none;
+}
+
 .sidebar-navigation {
   position: fixed;
   margin-top: 20%;
@@ -37,10 +76,11 @@
   li {
     padding: 14px 0px;
   }
+  li.active > a {
+    color: @pomegranate;
+  }
 
   li > a {
-    padding: 14px 0px;
-
     color: white;
   }
   li > a:hover {
@@ -48,15 +88,34 @@
   }
 }
 
-.container-fluid {
+.container-fluid-full {
+  .clearfix();
+
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.container-fluid-left {
+  .clearfix();
+
+  margin-left: 0;
+  margin-right: 250px;
+}
+
+.container-fluid-right {
+  .clearfix();
+
   margin-left: 250px;
   margin-right: 0;
-
-  height: 3000px;
-
-  padding: 0;
-  background-color: @gray;
 }
+@media only screen 
+and (max-width : 800px) {
+  .container-fluid-left,
+  .container-fluid-right {
+    margin: 0;
+  }
+}
+
 
 .body-wrapper {
   background-image: url(http://pabook.libraries.psu.edu/palitmap/BigMacSandwich.jpg);
@@ -68,14 +127,14 @@
   position: relative;
   padding-left: 2em;
 
-  h1 {
-    color: fade(#ffffff, 80%);
-
-    span {
-      color: fade(@accented, 80%);
-    }
-
-  }
+  // h1 {
+  //   color: fade(#ffffff, 75%);
+  //
+  //   span {
+  //     color: fade(@accented, 75%);
+  //   }
+  //
+  // }
 }
 
 #section1 {
@@ -111,17 +170,6 @@
 
 //-----------------------------------------------
 
-.container-most {
-  margin-left: 0;
-  margin-right: 250px;
-
-  padding: 6px;
-}
-
-.container-actions {
-
-}
-
 .action-card {
   width: 50%;
 
@@ -144,3 +192,606 @@
   background-image: url(http://www.moooi.com/sites/default/files/styles/large/public/randomlight300c_0.jpg);
   background-size: cover;
 }
+
+// About -----------------------------------------------
+
+.about-container {
+  &:extend(.container-fluid-left all);
+
+  height: 100%;
+}
+
+.about-slide {
+  .clearfix();
+
+  background-image: url(/img/about.png);
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  min-height: 100%;
+
+  color: @inverse;
+
+  .section-title {
+    padding-bottom: 55px;
+    max-width: 375px;
+    margin: 0 auto
+  }
+
+  .section-contents {
+    padding: 0 4.5%;
+  }
+
+  padding: 17%;
+}
+@media only screen 
+and (max-width : 1000px) {
+  .about-slide {
+    padding: 17% 8.5%;
+  }
+}
+
+
+
+// Volunteers -----------------------------------------------
+.volunteers-container {
+  &:extend(.container-fluid-left all);
+
+  height: 100%;
+}
+
+.volunteers-slide {
+  .clearfix();
+
+  background-image: url(/img/volunteers.png);
+  background-size: cover;
+  background-position: top;
+
+  text-align: center;
+  min-height: 100%;
+
+  color: @inverse;
+  font-weight: 300;
+
+  h1 {
+    padding-bottom: 27px;
+    margin: 0 auto;
+  }
+
+  .section-title {
+    padding-bottom: 55px;
+
+    min-width: 500px;
+    max-width: 700px;
+  }
+
+  .section-contents {
+    padding: 0 22%;
+  }
+
+  padding: 5%;
+}
+
+@media only screen 
+and (max-width : 800px) {
+  .volunteers-slide {
+    .section-title {
+      min-width: 320px;
+      max-width: 450px;
+    }
+
+    .section-contents {
+      padding: 0 8%;
+    }
+  }
+}
+
+
+.volunteers-tiles {
+  margin-top: 7.5%;
+
+  .section-caption {
+    padding: 0 22%;
+  }
+}
+
+.volunteers-tile {
+  display: inline-block;
+  width: 32%;
+  vertical-align: top;
+
+  p {
+    font-size: 12.5px;
+    line-height: 1.25;
+    padding: 0 12.5px;
+    max-width: 195px;
+    margin: 0 auto;
+  }
+
+  .tile-image {
+    height: 142px;
+    margin-top: 36px;
+    margin-bottom: 18px;
+  }
+}
+
+@media only screen 
+and (max-width : 800px) {
+  .volunteers-tile {
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+
+    p {
+      font-size: 15px;
+      line-height: 1.5;
+      max-width: 100%;
+    }
+  }
+}
+
+.volunteers-stories {
+  .clearfix();
+
+  background-color: @gray-soft;
+  text-align: center;
+
+  .section-title {
+    text-transform: uppercase;
+    font-family: @font-family-base;
+    color: @brand-secondary;
+    font-size: 15px;
+    font-weight: 700;
+
+    padding: 24px 0 36px 0;
+  }
+
+  .post-section-title {
+    padding: 15px 0 22px 0;
+  }
+
+  .section-contents {
+    margin: 0 6.5% 0 11.5%;
+  }
+}
+
+@media only screen 
+and (max-width : 1000px) {
+  .volunteers-stories {
+    .section-contents {
+      margin: 0 6.5%;
+    }
+  }
+}
+
+
+.volunteers-stories-person-photo-1 {
+  background-image: url(http://skyethelimit.files.wordpress.com/2012/03/389202_tomwaits-2portrait.jpg);
+  background-size: cover;
+  background-position: center;
+
+  height: 110px;
+  width: 110px;
+
+  border-radius: 110px;
+  margin: 0 auto;
+}
+.volunteers-stories-person-photo-2 {
+  background-image: url(http://www.greatthoughtstreasury.com/sites/default/files/Trotsky1%5B1%5D.jpg);
+  background-size: cover;
+  background-position: center;
+
+  height: 110px;
+  width: 110px;
+
+  border-radius: 110px;
+  margin: 0 auto;
+}
+
+.volunteers-stories-person-left {
+  display: inline-block;
+  float: left;
+  margin-left: -20px;
+
+  p {
+    width: 150px;
+    font-size: 15px;
+    margin: 15px auto;
+  }
+}
+
+.volunteers-stories-person-right {
+  display: inline-block;
+  float: right;
+  margin-right: -20px;
+
+  p {
+    width: 150px;
+    font-size: 15px;
+    margin: 15px auto;
+  }
+}
+
+@media only screen
+and (max-width : 800px) {
+  .volunteers-stories-person-right,
+  .volunteers-stories-person-left {
+    display: block;
+    float: none;
+    margin: 0;
+  }
+}
+
+
+
+.volunteers-stories-well {
+  &:extend(.well all);
+
+  background-color: @inverse;
+  margin-bottom: 32px;
+
+  text-align: left;
+  padding: 21px;
+
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.05);
+
+  border-width: 0;
+  border-radius: 10px;
+}
+
+
+.volunteers-stories-well-left {
+  &:extend(.volunteers-stories-well all);
+  margin-left: 160px;
+}
+
+.volunteers-stories-well-right {
+  &:extend(.volunteers-stories-well all);
+  margin-right: 160px;
+}
+
+@media only screen
+and (max-width : 800px) {
+  .volunteers-stories-well-left,
+  .volunteers-stories-well-right {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.volunteers-responce-form {
+  .clearfix();
+
+  background-color: @brand-secondary;
+  color: @inverse;
+
+  padding: 30px 2.5% 30px 6.5%;
+
+  p {
+    font-size: 15px;
+  }
+
+  .resp-form {
+    margin-top: 30px;
+    margin-right: 240px;
+
+    button {
+      position: absolute;
+      display: inline-block;
+
+      width: 214px;
+      margin-left: 26px;
+
+      margin-bottom: 30px;
+    }
+
+    input {
+      display: inline-block;
+
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media only screen
+and (max-width : 800px) {
+  .volunteers-responce-form {
+    .resp-form {
+      margin-right: 0px;
+
+      button {
+        position: relative;
+        display: block;
+
+        width: 100%;
+        margin-left: 0;
+      }
+
+      input {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.volunteers-description {
+  .clearfix();
+
+  background-color: @gray-soft;
+
+  padding: 2.5% 17.5%;
+
+
+  .section-title {
+    .blacktitle();
+
+    margin-bottom: 80px;
+    margin-right: -15%;
+
+    min-width: 500px;
+    max-width: 750px;
+  }
+
+  .section-contents {
+    p {
+      margin: 30px 0;
+    }
+
+  }
+}
+@media only screen 
+and (max-width : 1000px) {
+  .volunteers-description {
+    padding: 2.5% 8.5%;
+    .section-title {
+      margin-right: -7.55%;
+    }
+  }
+}
+@media only screen 
+and (max-width : 800px) {
+  .volunteers-description {
+    .section-title {
+      min-width: 320px;
+      max-width: 480px;
+    }
+  }
+}
+
+
+// Companies -----------------------------------------------
+.companies-container {
+  &:extend(.volunteers-container all);
+}
+
+.companies-slide {
+  &:extend(.volunteers-slide all);
+
+  background-image: url(/img/companies.png);
+}
+
+.companies-tiles {
+  &:extend(.volunteers-tiles all);
+}
+
+.companies-tile {
+  &:extend(.volunteers-tile all);
+}
+
+.companies-stories {
+  &:extend(.volunteers-stories all);
+
+  .section-contents {
+    margin: 0 1.5% 0 4.5%;
+  }
+
+}
+@media only screen 
+and (max-width : 1000px) {
+  .companies-stories {
+    .section-contents {
+      margin: 0 1.5%;
+    }
+  }
+}
+
+.companies-story {
+  width: 24.5%;
+  min-width: 200px;
+  max-width: 300px;
+
+  display: inline-block;
+  padding: 8px;
+}
+
+.companies-stories-well {
+  &:extend(.volunteers-stories-well all);
+
+  .visa {
+    background-image: url(/img/icons/com_visa.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .datravel {
+    background-image: url(/img/icons/com_datravel.png);
+    background-size: 77px 97px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  padding-top: 75px;
+  margin-bottom: 0px;
+
+  height: 300px;
+}
+
+.companies-responce-form {
+  &:extend(.volunteers-responce-form all);
+}
+
+.companies-description {
+  &:extend(.volunteers-description all);
+}
+
+
+// Action -----------------------------------------------
+.action-container {
+  &:extend(.container-fluid-full all);
+
+  height: 100%;
+}
+
+.action-slide {
+  .clearfix();
+
+  background-image: url(/img/action.png);
+  background-size: cover;
+  background-position: center;
+
+  text-align: left;
+  height: 100%;
+
+  color: @inverse;
+  font-weight: 300;
+
+  .backwards-title {
+    font-size: 32px;
+  }
+
+  padding: 2% 4%;
+}
+
+.action-description {
+  position: absolute;
+  top: 40%;
+  background-color: fade(@inverse, 90%);
+  width: 70%;
+  margin: 0 15%;
+
+  min-height: 50%;
+  padding: 27px;
+
+  h1 {
+    color: @brand-primary;
+    font-size: 64px;
+    margin-top: 20px;
+  }
+
+  p {
+    font-size: 21px;
+  }
+}
+
+.action-description-date {
+  font-size: 16px;
+
+  span {
+    color: @accented;
+  }
+}
+
+.action-description-subtitle {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+.line-separator {
+  height: 1px;
+  background: @accented;
+  margin: 68px 0 42px 0;
+}
+
+.action-description-news {
+  h1 {
+    font-size: 36px;
+    font-weight: 100;
+    font-family: @font-family-base;
+    color: @accented;
+  }
+}
+
+.action-stories {
+  &:extend(.volunteers-stories all);
+  background: transparent;
+
+  .section-title {
+    font-size: 20px;
+  }
+  .section-contents {
+    margin: 0 -25%;
+  }
+
+}
+
+.action-story {
+  width: 24.5%;
+  min-width: 200px;
+  max-width: 300px;
+
+  display: inline-block;
+  padding: 8px;
+}
+
+.action-stories-well {
+  &:extend(.volunteers-stories-well all);
+  background-color: @accented;
+
+  .act01 {
+    background-image: url(/img/icons/act_01.svg);
+    background-size: 72px 60px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+  .act02 {
+    background-image: url(/img/icons/act_02.svg);
+    background-size: 73px 70px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+  .act03 {
+    background-image: url(/img/icons/act_03.svg);
+    background-size: 75px 75px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+  .act04 {
+    background-image: url(/img/icons/act_04.svg);
+    background-size: 89px 101px;
+    background-repeat: no-repeat;
+    background-position: top;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  padding-top: 75px;
+  margin-bottom: 0px;
+
+  height: 300px;
+}
+
+.actions-container {
+  &:extend(.container-fluid-left all);
+
+  padding: 6px;
+}
+

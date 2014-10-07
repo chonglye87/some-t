@@ -101,13 +101,14 @@ label {
 
   // Flat (without border)
   &.flat {
+    font-weight: 300;
     border-color: transparent;
 
     &:hover {
       border-color: @gray-light;
     }
     &:focus {
-      border-color: @brand-secondary;
+      border-color: @pomegranate;
     }
   }
 }
@@ -122,7 +123,7 @@ label {
 }
 
 .input-hg {
-  .input-size(@input-height-hg; 10px; 16px; @input-font-size-hg; @input-line-height-hg);
+  .input-size(@input-height-hg; 20px; 30px; @input-font-size-hg; @input-line-height-hg; @input-border-radius-hg);
 }
 
 // Form control feedback states

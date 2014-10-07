@@ -11,15 +11,15 @@ h1, h2, h3, h4, h5, h6,
   font-family: @headings-font-family;
   font-weight: @headings-font-weight;
   line-height: @headings-line-height;
-  color: @headings-color;
+  color: fade(@headings-color, 80%);
 
   small {
     color: @headings-small-color;
   }
+}
 
-  span {
-    color: @accented;
-  }
+h1 > span {
+  color: fade(@accented, 80%);
 }
 
 h1,
@@ -46,6 +46,13 @@ h4, .h4 { font-size: @font-size-h4; } // ~29px
 h5, .h5 { font-size: @font-size-h5; } // ~28px
 h6, .h6 { font-size: @font-size-h6; } // ~24px
 
+@media only screen 
+and (max-width : 800px) {
+  h1 {
+    font-size: floor((@font-size-h1 * 0.64));
+  }
+}
+
 
 // Body text
 // -------------------------
@@ -54,6 +61,7 @@ p {
   font-size:   @font-size-base;
   line-height: @line-height-base;
   margin: 0 0 (@line-height-computed / 2);
+  font-weight: 300;
 }
 
 .lead {
