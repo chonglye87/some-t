@@ -10,6 +10,7 @@
 
 @accented:                  #ee4052;
 @acc-shadowed:              #cc3645;
+@acc-bordered:              #d60f20;
 
 @turquoise:                 #1abc9c;
 @green-sea:                 #16a085;
@@ -61,7 +62,7 @@
 //
 //## Settings for some of the most global styles.
 
-@body-bg:                   white;
+@body-bg:                   @gray-soft;
 @text-color:                @brand-primary;
 
 //** Global textual link color.
@@ -147,7 +148,7 @@
 
 @btn-font-weight:            700;
 
-@btn-default-color:          #d60f20;
+@btn-default-color:          @acc-bordered;
 @btn-default-bg:             transparent;
 
 @btn-primary-color:          @inverse;
@@ -338,7 +339,7 @@
 // Basics of a navbar
 @zindex-navbar:              1000;
 @zindex-navbar-fixed:        1030;
-@navbar-height-base:         53px;
+@navbar-height-base:         64px;
 @navbar-height-large:        76px;
 @navbar-input-line-height:   1.4; // ~21px
 @navbar-margin-bottom:       @line-height-computed;
@@ -377,19 +378,19 @@
 
 // Inverted navbar
 // Reset inverted navbar basics
-@navbar-inverse-divider:              darken(@brand-primary, 3%);
+@navbar-inverse-divider:              darken(@brand-secondary, 3%);
 
 // Reset inverted navbar basics
 @navbar-inverse-color:                @inverse;
-@navbar-inverse-bg:                   @brand-primary;
+@navbar-inverse-bg:                   @brand-secondary;
 @navbar-inverse-border:               darken(@navbar-inverse-bg, 10%);
 
 // Inverted navbar links
 @navbar-inverse-link-color:           @inverse;
-@navbar-inverse-link-hover-color:     @brand-secondary;
+@navbar-inverse-link-hover-color:     @acc-shadowed;
 @navbar-inverse-link-hover-bg:        transparent;
 @navbar-inverse-link-active-color:    @navbar-inverse-link-color;
-@navbar-inverse-link-active-bg:       @brand-secondary;
+@navbar-inverse-link-active-bg:       @acc-shadowed;
 @navbar-inverse-link-disabled-color:  #444;
 @navbar-inverse-link-disabled-bg:     transparent;
 
@@ -596,7 +597,7 @@
 @screen-xs-min:               480px;
 
 // Small screen / tablet
-@screen-sm-min:               768px;
+@screen-sm-min:               801px;
 
 // Medium screen / desktop
 @screen-md-min:               992px;

@@ -13,6 +13,11 @@
   margin-bottom: @navbar-margin-bottom;
   border: none;
   border-radius: @navbar-border-radius;
+
+  @media (min-width: @grid-float-breakpoint) {
+    display: none;
+  }
+
 }
 
 // Navbar heading
@@ -140,50 +145,6 @@
   }
 
   @media (min-width: @grid-float-breakpoint) {
-    .navbar > .container &,
-    .navbar > .container-fluid & {
-      margin-left: -21px;
-    }
-  }
-}
-
-// Navbar toggle
-//
-// Custom button for toggling the `.navbar-collapse`, powered by the collapse
-// JavaScript plugin.
-
-.navbar-toggle {
-  border: none;
-  color: @brand-primary;
-  margin: 0 0 0 21px;
-  padding: 0 21px;
-  height: @navbar-height-base;
-  line-height: @navbar-height-base;
-
-  &:before {
-    color: @link-color;
-    content: "\e61a";
-    font-family: "Flat-UI-Pro-Icons";
-    font-size: floor((@component-font-size-base * 1.467)); // ~22px
-    font-style: normal;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transition: color .25s linear;
-  }
-  &:hover,
-  &:focus {
-    outline: none;
-
-    &:before {
-      color: @link-hover-color;
-    }
-  }
-  .icon-bar {
-    display: none;
-  }
-
-  @media (min-width: @grid-float-breakpoint) {
     display: none;
   }
 }
@@ -197,9 +158,9 @@
   margin: 0;
 
   > li > a {
-    font-size: floor((@component-font-size-base * 1.067)); // ~16px
+    font-size: floor((@component-font-size-base * 1.067 * 1.2)); // ~16px
     padding: ((@navbar-height-base - 23px) / 2) 21px;
-    line-height: 23px;
+    line-height: 28px;
     font-weight: 700;
   }
   > li > a:hover,
@@ -716,72 +677,6 @@
           margin-left: -4px;
           margin-right: -4px;
         }
-      }
-    }
-
-    @media (max-width: @grid-float-breakpoint-max) {
-       > li > a {
-         border-left-width: 0;
-       }
-      // Dropdowns get custom display when collapsed
-      .open .dropdown-menu {
-        > li > a {
-          color: @navbar-inverse-link-color;
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-hover-color;
-            background-color: @navbar-inverse-link-hover-bg;
-          }
-        }
-        > .active > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-active-color;
-            background-color: @navbar-inverse-link-active-bg;
-          }
-        }
-        > .disabled > a {
-          &,
-          &:hover,
-          &:focus {
-            color: @navbar-inverse-link-disabled-color;
-            background-color: @navbar-inverse-link-disabled-bg;
-          }
-        }
-      }
-      // Custom background for dividers when collapsed
-      .dropdown-menu .divider {
-        background-color: @navbar-inverse-divider;
-      }
-    }
-  }
-
-  .navbar-form {
-    .form-control {
-      color: @navbar-inverse-form-placeholder;
-      border-color: transparent;
-      background-color: @navbar-inverse-form-bg;
-      .placeholder(@navbar-inverse-form-placeholder);
-
-      &:focus {
-        border-color: @brand-secondary;
-         color: @brand-secondary;
-      }
-    }
-    .btn {
-      .button-variant(@btn-default-color, @brand-secondary, @btn-primary-hover-bg, @btn-primary-active-bg);
-    }
-    .input-group-btn .btn {
-      border-color: transparent;
-      background-color: @navbar-inverse-form-bg;
-      color: @navbar-inverse-form-icon;
-    }
-    .input-group.focus {
-      .form-control,
-      .input-group-btn .btn {
-         border-color: @brand-secondary;
-         color: @brand-secondary;
       }
     }
 

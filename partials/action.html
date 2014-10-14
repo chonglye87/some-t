@@ -1,0 +1,264 @@
+<div class="action-slide">
+  <a ui-sref="actions" class="backwards-title">← Все добрые дела</a>
+  <div class="section-contents">
+  </div>
+</div>
+<div class="action-description">
+  <div class="action-description-date"><span>31 августа</span> начало акции</div>
+  <div class="action-description-subtitle">Акция в поддержку детей из детдома</div>
+  <h1><span>Начало</span> учебного года</h1>
+
+  <div class="line-separator"></div>
+  <p>
+    Дисторшн имитирует фузз, это понятие создано по аналогии с термином
+    Ю.Н.Холопова "многозначная тональность". Мономерная остинатная педаль
+    синхронно дает динамический эллипсис, что отчасти объясняет такое
+    количество кавер-версий. Полимодальная организация синхронно выстраивает
+    целотоновый хамбакер, на этих моментах останавливаются Л.А.Мазель и
+    В.А.Цуккерман в своем "Анализе музыкальных произведений". Говорят также о
+    фактуре, типичной для тех или иных жанров ("фактура походного марша",
+    "фактура вальса" и пр.), и здесь мы видим, что гармоническое микророндо
+    изящно вызывает гипнотический рифф, и здесь в качестве модуса
+    конструктивных элементов используется ряд каких-либо единых длительностей.
+    Соинтервалие трансформирует серийный аккорд, и если в одних голосах или
+    пластах музыкальной ткани сочинения еще продолжаются конструктивно-
+    композиционные процессы предыдущей части, то в других - происходит
+    становление новых
+  </p>
+
+  <div class="line-separator"></div>
+  <div ng-if="!arch">
+    <div class="action-description-news">
+      <h1>17 июня 2014 года</h1>
+      <p>Собрано: 17 учебников, 25 единиц одежды, 1 компьютер</p>
+    </div>
+    <div class="action-description-news">
+      <h1>25 июня 2014 года</h1>
+      <p>Собрано: 17 учебников, 25 единиц одежды, 1 компьютер</p>
+    </div>
+  </div>
+
+  <div class="action-stories" ng-if="arch">
+    <h2 class="section-title">Мы собрали</h2>
+    <div class="section-contents">
+
+      <div class="action-story-flow">
+
+        <div class="action-story" ng-repeat="a in actioncards">
+          <div class="action-story-well">
+            <div class="action-story-shirt">
+              <div class="action-story-shirt-logo" back-img="{{a.logo}}"></div>
+              <div class="action-story-shirt-title">{{a.title}}</div>
+            </div>
+            <div class="action-story-actionbar-done">
+              <div class="lead"><span>75</span></div><div class="lead">кг собрано</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="action-stories" ng-if="!arch">
+    <h2 class="section-title">Детям нужно</h2>
+    <div class="section-contents">
+
+      <div class="action-story-flow">
+
+        <div class="flip-container" id="acard0">
+          <div class="flipper">
+            <div class="front" onclick="document.querySelector('#acard0').classList.toggle('active');">
+                <div class="action-story">
+                  <div class="action-story-well">
+                    <div class="action-story-shirt">
+                      <div class="action-story-shirt-logo" back-img="/img/icons/act_01.svg"></div>
+                      <div class="action-story-shirt-title">Одежда</div>
+                    </div>
+                    <div class="action-story-pants">
+                      <p>Нам нужна детская одежда любых размеров</p>
+                    </div>
+                    <div class="action-story-actionbar">
+                      <button class="btn btn-default btn-xs">Помочь</button>
+                      <div class="lead"><span>75</span> кг собрано</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="companies-story">
+                  <div class="red-companies-story-well">
+                    <p>Как помочь?</p>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard0').classList.toggle('active');">Рассказать друзьям</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard0').classList.toggle('active');">Сдать одежду</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard0').classList.toggle('active');">Помочь финансами</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-container" id="acard1">
+          <div class="flipper">
+            <div class="front" onclick="document.querySelector('#acard1').classList.toggle('active');">
+                <div class="action-story">
+                  <div class="action-story-well">
+                    <div class="action-story-shirt">
+                      <div class="action-story-shirt-logo" back-img="/img/icons/act_02.svg"></div>
+                      <div class="action-story-shirt-title">Учебники</div>
+                    </div>
+                    <div class="action-story-pants">
+                      <p>Учебники нужны разные для всех классов</p>
+                    </div>
+                    <div class="action-story-actionbar">
+                      <button class="btn btn-default btn-xs">Помочь</button>
+                      <div class="lead"><span>75</span> кг собрано</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="companies-story">
+                  <div class="red-companies-story-well">
+                    <p>Как помочь?</p>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard1').classList.toggle('active');">Рассказать друзьям</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard1').classList.toggle('active');">Сдать одежду</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard1').classList.toggle('active');">Помочь финансами</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-container" id="acard2">
+          <div class="flipper">
+            <div class="front" onclick="document.querySelector('#acard2').classList.toggle('active');">
+                <div class="action-story">
+                  <div class="action-story-well">
+                    <div class="action-story-shirt">
+                      <div class="action-story-shirt-logo" back-img="/img/icons/act_03.svg"></div>
+                      <div class="action-story-shirt-title">Компьютеры</div>
+                    </div>
+                    <div class="action-story-pants">
+                      <p>Для современного образования нужна современная техника</p>
+                    </div>
+                    <div class="action-story-actionbar">
+                      <button class="btn btn-default btn-xs">Помочь</button>
+                      <div class="lead"><span>75</span> кг собрано</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="companies-story">
+                  <div class="red-companies-story-well">
+                    <p>Как помочь?</p>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard2').classList.toggle('active');">Рассказать друзьям</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard2').classList.toggle('active');">Сдать одежду</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard2').classList.toggle('active');">Помочь финансами</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flip-container" id="acard3">
+          <div class="flipper">
+            <div class="front" onclick="document.querySelector('#acard3').classList.toggle('active');">
+                <div class="action-story">
+                  <div class="action-story-well">
+                    <div class="action-story-shirt">
+                      <div class="action-story-shirt-logo" back-img="/img/icons/act_04.svg"></div>
+                      <div class="action-story-shirt-title">Волонтеры</div>
+                    </div>
+                    <div class="action-story-pants">
+                      <p>Нам нужны не только вещи, но и волонтеры, которые нам помогут</p>
+                    </div>
+                    <div class="action-story-actionbar">
+                      <button class="btn btn-default btn-xs">Помочь</button>
+                      <div class="lead"><span>75</span> кг собрано</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="companies-story">
+                  <div class="red-companies-story-well">
+                    <p>Как помочь?</p>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard3').classList.toggle('active');">Рассказать друзьям</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard3').classList.toggle('active');">Сдать одежду</button>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#acard3').classList.toggle('active');">Помочь финансами</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="action-stories">
+    <h2 ng-if="!arch" class="section-title">Компании, которые нам помогают</h2>
+    <h2 ng-if="arch" class="section-title">Спасибо за поддержку</h2>
+    <div class="section-contents">
+
+      <div class="companies-story-flow">
+
+        <div class="companies-story" ng-repeat="c in companies">
+          <a class="companies-story-link" href="{{c.url}}">
+            <div class="companies-story-well">
+              <div class="companies-story-description">{{c.description}}</div>
+              <div class="companies-story-logo" back-img="{{c.logo}}"></div>
+            </div>
+          </a>
+        </div>
+
+
+        <!-- <div class="companies&#45;story"> -->
+        <!--   <a class="companies&#45;story&#45;link"> -->
+        <!--     <div class="companies&#45;story&#45;well"> -->
+        <!--       <div class="companies&#45;story&#45;description&#45;add"> -->
+        <!--         <button class="btn btn&#45;default btn&#45;xx"><span>Стать компанией</span> Da!</button> -->
+        <!--       </div> -->
+        <!--       <div class="companies&#45;story&#45;logo" back&#45;img="/img/icons/empty_company.svg"> -->
+        <!--       </div> -->
+        <!--     </div> -->
+        <!--   </a> -->
+        <!-- </div> -->
+
+        <div class="flip-container" id="card0">
+          <div class="flipper">
+            <div class="front" onclick="document.querySelector('#card0').classList.toggle('active');">
+                <div class="companies-story">
+                  <div class="companies-story-well">
+                    <div class="companies-story-description-add">
+                      <button class="btn btn-default btn-xx"><span>Стать компанией</span> Da!</button>
+                    </div>
+                    <div class="companies-story-logo" back-img="/img/icons/empty_company.svg"></div>
+                  </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="companies-story">
+                  <div class="red-companies-story-well">
+                    <p>Напишите свою почту и мы свяжемся с вами!</p>
+                    <div class="red-companies-story-mail" back-img="/img/icons/mail.svg"></div>
+                    <input class="form-control flat" type="text" placeholder="Например, info@inbox.ru"></input>
+                    <button class="btn btn-primary" type="submit" onclick="document.querySelector('#card0').classList.toggle('active');">Отправить</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,14 +1,14 @@
 {
-  "name": "flat-ui",
+  "name": "da-vol",
   "version": "2.2.0",
   "main": [
-    "less/flat-ui.less",
-    "dist/css/flat-ui.css",
-    "dist/js/flat-ui.js",
-    "dist/fonts/flat-ui-icons-regular.eot",
-    "dist/fonts/flat-ui-icons-regular.svg",
-    "dist/fonts/flat-ui-icons-regular.ttf",
-    "dist/fonts/flat-ui-icons-regular.woff"
+    "less/da-vol.less",
+    "dist/css/da-vol.css",
+    "dist/js/da-vol.js",
+    "dist/fonts/da-vol-icons-regular.eot",
+    "dist/fonts/da-vol-icons-regular.svg",
+    "dist/fonts/da-vol-icons-regular.ttf",
+    "dist/fonts/da-vol-icons-regular.woff"
   ],
   "ignore": [
     ".*",
@@ -25,10 +25,14 @@
     "typeahead.js": "~0.10.5",
     "google-code-prettify": "~1.0.3",
     "bootstrap-tagsinput": "~0.4.2",
-    "videojs": "~4.7.2",
-    "select2": "~3.5.1"
+    "select2": "~3.5.1",
+    "angular": "~1.2.26",
+    "angular-ui-router": "~0.2.11"
   },
   "resolutions": {
     "jquery": "~1.11.1"
+  },
+  "dependencies": {
+    "angular-masonry": "~0.9.1"
   }
 }

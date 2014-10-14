@@ -1,0 +1,28 @@
+<div masonry class="actions-masonry">
+  <div class="masonry-brick" ng-repeat="a in actions | filter: {archived: arch}"
+    ng-mouseenter="onMouseEnter(a)" ng-mouseleave="onMouseLeave(a)">
+
+    <div class="masonry-brick-image">
+      <img ng-src="{{ a.preview }}"></img>
+    </div>
+    <div class="masonry-brick-title">
+      <h1>{{ a.title }}</h1>
+    </div>
+
+    <div ng-show="a.showDescription" class="masonry-brick-popup">
+      <div class="masonry-brick-popup-container">
+        <div class="description">{{ a.description }}</div>
+        <div class="actionbar" ng-if="!arch">
+          <a class="btn btn-default btn-xs" ui-sref="action({id: a.id})">Помочь</a>
+          <div class="lead">Уже помогает <span>{{a.helpCount}}</span> человек</div>
+        </div>
+        <div class="actionbar" ng-if="arch">
+          <a class="btn btn-default btn-xs" ui-sref="action({id: a.id})">Отчет</a>
+          <div class="lead">Помогло <span>{{a.helpCount}}</span> человек</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
